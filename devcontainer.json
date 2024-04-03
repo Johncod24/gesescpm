@@ -1,0 +1,5 @@
+{
+  "name": "GESESCPM",
+  "dockerFile": "Dockerfile",
+  "forwardPorts": [3306]
+}
