@@ -1,0 +1,47 @@
+Você agora é um programador Fullstack, experiente e mcriaçoes de sites, com html/Css/Javascript, MySql, PHP.
+tendo 10 anos de carreria na area, me ajudara a fazer um sistema de gestao Academico, que estpu chamando de : GesEsECPM.
+tendo as seguintes descricoes abaixo, onde voce pode alterare e atualizar o que quizer de acordo  com sua experiencia.
+Cadastro:
+Alunos: Permitir o registro de informações dos alunos, como nome, matrícula, data de nascimento, endereço, etc.
+Professores: Registrar dados dos professores, como nome, disciplinas que lecionam, e outras informações relevantes.
+Cursos: Cadastrar os cursos oferecidos pela instituição, incluindo nome, código, carga horária, etc.
+Matrícula em Curso: Associar alunos aos cursos nos quais estão matriculados.
+Cadastro de Disciplinas:
+Registrar informações sobre as disciplinas, como nome, código, carga horária, pré-requisitos, etc.
+Associar disciplinas aos cursos nos quais são oferecidas.
+Cadastro de Turmas:
+Criar turmas para cada disciplina, especificando o professor responsável, horário, sala de aula, etc.
+Associar alunos às turmas em que estão matriculados.
+Consultas:
+Coordenador(a) de um Curso: Permitir que o coordenador(a) acesse informações sobre os cursos, como lista de alunos, disciplinas oferecidas, professores, etc.
+Professor(a) de um Curso: Oferecer acesso a informações específicas sobre as turmas que o professor leciona, lista de alunos, notas, etc.
+Disciplinas de um Curso: Exibir todas as disciplinas associadas a um curso.
+Alunos(as) Matriculados(as) em um Curso: Listar os alunos matriculados em um curso específico.
+Alunos(as) Matriculados(as) em uma Turma: Mostrar os alunos inscritos em uma turma específica.
+Quanto à implementação, podemos criar um site usando HTML, JavaScript e CSS para a interface do usuário. Para o back-end, utilizaremos PHP para processar as requisições do usuário e interagir com o banco de dados. O MySQL será usado para armazenar os dados dos alunos, professores, cursos, disciplinas e turmas. O phpMyAdmin será útil para gerenciar o banco de dados.
+Para a parte de consulta, podemos criar uma tela com frames para exibir as informações de forma organizada e intuitiva.
+mas primeiro me ajude a configurar o ambiente no codespace github, e a instalar as dependencias necessarias
+Claro, aqui está um resumo detalhado do sistema de gestão acadêmica que desenvolvemos neste chat:
+1. Banco de Dados:
+Criamos um banco de dados chamado johntest com as seguintes tabelas:
+Alunos: Armazena informações sobre os alunos.
+Professores: Armazena informações sobre os professores.
+Cursos: Armazena informações sobre os cursos.
+Disciplinas: Armazena informações sobre as disciplinas.
+Turmas: Armazena informações sobre as turmas.
+Matriculas: Armazena informações sobre as matrículas dos alunos nos cursos.
+Matriculas_Turmas: Armazena informações sobre as matrículas dos alunos nas turmas.
+Usuarios: Armazena informações sobre os usuários para a funcionalidade de login.
+2. Páginas de Cadastro:
+Criamos páginas de cadastro para alunos, professores, disciplinas, cursos e turmas. Cada página contém um formulário HTML que envia os dados inseridos para um script PHP correspondente. O script PHP então insere os dados no banco de dados.
+3. Páginas de Consulta:
+Criamos páginas de consulta para o coordenador de um curso, professor de um curso, disciplinas de um curso, alunos matriculados em um curso e alunos matriculados em uma turma. Cada página contém um formulário HTML que envia os dados inseridos para um script PHP correspondente. O script PHP então recupera os dados relevantes do banco de dados e os exibe.
+4. Funcionalidades de Login, Registro e Logout:
+Criamos páginas de login e registro, bem como uma funcionalidade de logout. A página de login contém um formulário que envia o nome de usuário e a senha inseridos para um script PHP, que verifica se as credenciais estão corretas. A página de registro contém um formulário que envia o nome de usuário e a senha inseridos para um script PHP, que insere o novo usuário no banco de dados. A funcionalidade de logout é implementada como um script PHP que destrói a sessão do usuário.
+O que pode ter faltado:
+
+Segurança: As senhas dos usuários estão sendo armazenadas em texto simples, o que não é seguro. Em um ambiente de produção, você deve usar técnicas de hash e sal para armazenar senhas de forma segura.
+Validação de Dados: Não implementamos nenhuma validação de dados no lado do servidor. Em um ambiente de produção, você deve validar todos os dados recebidos do usuário para evitar ataques de injeção SQL e garantir que os dados estejam no formato correto.
+Mensagens de Erro Amigáveis: As mensagens de erro atuais são bastante genéricas. Em um ambiente de produção, você deve fornecer mensagens de erro mais amigáveis e úteis para o usuário.
+Recuperação de Senha: Não implementamos uma funcionalidade de recuperação de senha. Isso seria útil se um usuário esquecer sua senha.
+Permissões de Usuário: Atualmente, todos os usuários têm as mesmas permissões. Em um ambiente de produção, você pode querer implementar diferentes níveis de permissões de usuário.

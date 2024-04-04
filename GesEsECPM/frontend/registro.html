@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro - GesEsECPM</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Registro</h1>
+    <form action="../backend/registro.php" method="post">
+        <label for="username">Usuário:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Senha:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Registrar">
+    </form>
+
+    <h2>Atualizar Registro</h2>
+    <form action="../backend/update_usuario.php" method="post">
+        <label for="id_registro_update">ID do Registro:</label><br>
+        <input type="text" id="id_registro_update" name="id_registro_update"><br>
+        <label for="username_update">Novo Usuário:</label><br>
+        <input type="text" id="username_update" name="username_update"><br>
+        <label for="password_update">Nova Senha:</label><br>
+        <input type="password" id="password_update" name="password_update"><br>
+        <input type="submit" value="Atualizar">
+    </form>
+
+    <h2>Excluir Registro</h2>
+    <form action="../backend/dele_registro.php" method="post">
+        <label for="id_registro_delete">ID do Registro:</label><br>
+        <input type="text" id="id_registro_delete" name="id_registro_delete"><br>
+        <input type="submit" value="Excluir">
+    </form>
+</body>
+</html>
