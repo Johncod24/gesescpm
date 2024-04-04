@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GesEsECPM - Sistema de Gestão Acadêmica</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Bem-vindo ao GesEsECPM!</h1>
+    <!-- Aqui você pode adicionar links para as outras páginas -->
+    <a href="login.html">Login</a>
+    <a href="registro.html">Registro</a>
+    <a href="alunos.html">Cadastro de Alunos</a>
+    <a href="professores.html">Cadastro de Professores</a>
+    <a href="cursos.html">Cadastro de Cursos</a>
+    <a href="disciplinas.html">Cadastro de Disciplinas</a>
+    <a href="turmas.html">Cadastro de Turmas</a>
+    <!-- Adicione links para as páginas de consulta aqui -->
+    <?php
+    session_start();
+    if(isset($_SESSION['username'])) {
+        echo "<a href='logout.php'>Logout</a>";
+    }
+    ?>
+</body>
+</html>

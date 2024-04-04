@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consulta de Professor - GesEsECPM</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Consulta de Professor</h1>
+    <form action="../backend/professor.php" method="post">
+        <label for="id_professor">ID do Professor:</label><br>
+        <input type="text" id="id_professor" name="id_professor"><br>
+        <input type="submit" value="Consultar">
+    </form>
+
+    <h2>Atualizar Professor</h2>
+    <form action="../backend/update_professor.php" method="post">
+        <label for="id_professor_update">ID do Professor:</label><br>
+        <input type="text" id="id_professor_update" name="id_professor_update"><br>
+        <label for="nome_update">Novo Nome:</label><br>
+        <input type="text" id="nome_update" name="nome_update"><br>
+        <label for="disciplinas_update">Novas Disciplinas:</label><br>
+        <input type="text" id="disciplinas_update" name="disciplinas_update"><br>
+        <input type="submit" value="Atualizar">
+    </form>
+
+    <h2>Excluir Professor</h2>
+    <form action="../backend/delete_professor.php" method="post">
+        <label for="id_professor_delete">ID do Professor:</label><br>
+        <input type="text" id="id_professor_delete" name="id_professor_delete"><br>
+        <input type="submit" value="Excluir">
+    </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Disciplinas - GesEsECPM</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Cadastro de Disciplinas</h1>
+    <form action="../backend/disciplinas.php" method="post">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome"><br>
+        <label for="codigo">Código:</label><br>
+        <input type="text" id="codigo" name="codigo"><br>
+        <label for="carga_horaria">Carga Horária:</label><br>
+        <input type="text" id="carga_horaria" name="carga_horaria"><br>
+        <label for="pre_requisitos">Pré-requisitos:</label><br>
+        <input type="text" id="pre_requisitos" name="pre_requisitos"><br>
+        <input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>
