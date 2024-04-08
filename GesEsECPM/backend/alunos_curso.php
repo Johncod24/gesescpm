@@ -1,14 +1,5 @@
 <?php
-$servername = "testes";
-$username = "johntest";
-$password = "YWAjfT3j]SNV/VyE";
-$dbname = "johntest";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+include("connect.php");
 
 $sql = "SELECT Alunos.nome, Alunos.matricula, Alunos.nascimento, Alunos.endereco FROM Alunos JOIN Matriculas ON Alunos.id = Matriculas.id_aluno WHERE Matriculas.id_curso='".$_POST["id_curso"]."'";
 

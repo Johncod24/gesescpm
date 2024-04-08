@@ -11,5 +11,21 @@
         <input type="text" id="id_curso" name="id_curso"><br>
         <input type="submit" value="Consultar">
     </form>
+
+    <h2>Atualizar Coordenador</h2>
+    <form action="../backend/update_coordenador.php" method="post">
+        <label for="id_curso_update">ID do Curso:</label><br>
+        <input type="text" id="id_curso_update" name="id_curso_update"><br>
+        <label for="novo_coordenador">Novo Coordenador:</label><br>
+        <input type="text" id="novo_coordenador" name="novo_coordenador"><br>
+        <input type="submit" value="Atualizar">
+    </form>
+
+    <h2>Excluir Coordenador</h2>
+    <form action="../backend/delete_coordenador.php" method="post">
+        <label for="id_curso_delete">ID do Curso:</label><br>
+        <input type="text" id="id_curso_delete" name="id_curso_delete"><br>
+        <input type="submit" value="Excluir">
+    </form>
 </body>
 </html>

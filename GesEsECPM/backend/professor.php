@@ -1,26 +1,34 @@
 <?php
-$servername = "testes";
-$username = "johntest";
-$password = "YWAjfT3j]SNV/VyE";
-$dbname = "johntest";
+// Verifica se os dados foram enviados via POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verifica se o ID do professor foi enviado
+    if (isset($_POST['id_professor'])) {
+include("connect.php");
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+        // Consulta o banco de dados para o professor com o ID fornecido
+        $sql = "SELECT * FROM Professores WHERE id=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $_POST['id_professor']);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+        if ($result->num_rows > 0) {
+            // Exibe os resultados da consulta
+            while ($row = $result->fetch_assoc()) {
+                echo "Nome: " . $row["nome"]. " - Disciplinas: " . $row["disciplinas"]. "<br>";
+            }
+        } else {
+            echo "Nenhum resultado encontrado.";
+        }
 
-$sql = "SELECT * FROM Professores WHERE id='".$_POST["id_professor"]."'";
-
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-    echo "Nome: " . $row["nome"]. " - Disciplinas: " . $row["disciplinas"]. "<br>";
-  }
+        // Fecha a conexão
+        $conn->close();
+    } else {
+        // Se o ID do professor não foi enviado, exibe uma mensagem de erro
+        echo "ID do professor não fornecido.";
+    }
 } else {
-  echo "Nenhum resultado encontrado.";
+    // Se não for enviado via POST, redireciona para a página de erro
+    header("Location: erro.php");
 }
-
-$conn->close();
 ?>

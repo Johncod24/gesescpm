@@ -1,17 +1,6 @@
 <?php
-// Conexão com o banco de dados (substitua pelas suas credenciais)
-$servername = "localhost";
-$username = "seu_usuario";
-$password = "sua_senha";
-$dbname = "seu_banco_de_dados";
-
-// Cria a conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verifica a conexão
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
+// Inclui o arquivo de conexão com o banco de dados
+include("connect.php");
 
 // Obtém o ID da turma do formulário
 $id_turma = $_POST['id_turma'];

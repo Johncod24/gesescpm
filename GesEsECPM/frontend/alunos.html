@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cadastro de Alunos - GesEsECPM</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Gerenciamento de Alunos</title>
 </head>
-<script src="scripts.js"></script>
-
 <body>
-    <h1>Cadastro de Alunos</h1>
-    <form action="../backend/alunos.php" method="post" onsubmit="return validateForm()">
+    <h1>Gerenciamento de Alunos</h1>
+    <h2>Cadastrar Novo Aluno</h2>
+    <form action ="alunos.php" method="post">
+        <label for="cpf">CPF:</label><br>
+        <input type="text" id="cpf" name="cpf"><br>
         <label for="nome">Nome:</label><br>
         <input type="text" id="nome" name="nome"><br>
-        <label for="matricula">Matrícula:</label><br>
-        <input type="text" id="matricula" name="matricula"><br>
-        <label for="nascimento">Data de Nascimento:</label><br>
-        <input type="date" id="nascimento" name="nascimento"><br>
         <label for="endereco">Endereço:</label><br>
         <input type="text" id="endereco" name="endereco"><br>
-        <input type="submit" value="Cadastrar">
-
+        <label for="complemento">Complemento:</label><br>
+        <input type="text" id="complemento" name="complemento"><br>
+        <label for="cep">CEP:</label><br>
+        <input type="text" id="cep" name="cep"><br>
+        <label for="bairro">Bairro:</label><br>
+        <input type="text" id="bairro" name="bairro"><br>
+        <label for="cidade">Cidade:</label><br>
+        <input type="text" id="cidade" name="cidade"><br>
+        <label for="estado">Estado:</label><br>
+        <input type="text" id="estado" name="estado"><br>
+        <label for="telefone">Telefone:</label><br>
+        <input type="text" id="telefone" name="telefone"><br>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <h2>Atualizar Aluno</h2>
+    <form action="../backend/update_aluno.php" method="post">
+        <label for="cpf_update">CPF do Aluno:</label><br>
+        <input type="text" id="cpf_update" name="cpf_update"><br>
+        <label for="nome_update">Novo Nome:</label><br>
+        <input type="text" id="nome_update" name="nome_update"><br>
+        <button type="submit">Atualizar</button>
+    </form>
+    <h2>Remover Aluno</h2>
+    <form action ="../backend/delete_aluno.php" method="post">
+        <label for="cpf_delete">CPF do Aluno:</label><br>
+        <input type="text" id="cpf_delete" name="cpf_delete"><br>
+        <button type="submit">Remover</button>
     </form>
 </body>
 </html>

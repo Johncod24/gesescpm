@@ -11,5 +11,18 @@
         <input type="text" id="id_curso" name="id_curso"><br>
         <input type="submit" value="Consultar">
     </form>
+        <h1>Atualizar e Excluir Curso</h1>
+        <form action="../backend/update_curso.php" method="post">
+            <label for="id">ID do Curso:</label><br>
+            <input type="text" id="id" name="id"><br>
+            <!-- Inclua aqui os campos para atualização dos dados do curso (nome, duração, coordenador, etc.) -->
+            <button type="submit">Atualizar</button>
+        </form>
+    
+        <form action="../backend/delete_curso.php" method="post">
+            <label for="id_excluir">ID do Curso a Excluir:</label><br>
+            <input type="text" id="id_excluir" name="id"><br>
+            <button type="submit">Excluir</button>
+        </for>
 </body>
 </html>
