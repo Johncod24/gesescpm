@@ -1,34 +1,42 @@
 <?php
-// Conexão com o banco de dados (substitua pelas suas credenciais)
-$servername = "localhost";
-$username = "seu_usuario";
-$password = "sua_senha";
-$dbname = "seu_banco_de_dados";
+include("connect.php");
 
-// Obtém os dados do formulário
-$id = $_POST['id'];
-$nome = $_POST['nome'];
-$matricula = $_POST['matricula'];
-$nascimento = $_POST['nascimento'];
-$endereco = $_POST['endereco'];
+// Verifica se os dados foram enviados via POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verifica se todos os campos foram preenchidos
+    if (isset($_POST['cpf'], $_POST['nome'], $_POST['matricula'], $_POST['nascimento'], $_POST['endereco'], $_POST['complemento'], $_POST['cep'], $_POST['bairro'], $_POST['cidade'], $_POST['estado'], $_POST['telefone'])) {
+        // Obtém os dados do formulário
+        $cpf = $_POST['cpf'];
+        $nome = $_POST['nome'];
+        $matricula = $_POST['matricula'];
+        $nascimento = $_POST['nascimento'];
+        $endereco = $_POST['endereco'];
+        $complemento = $_POST['complemento'];
+        $cep = $_POST['cep'];
+        $bairro = $_POST['bairro'];
+        $cidade = $_POST['cidade'];
+        $estado = $_POST['estado'];
+        $telefone = $_POST['telefone'];
 
-// Cria a conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
+        // Atualiza os dados na tabela alunos
+        $sql = "UPDATE alunos SET nome=?, matricula=?, nascimento=?, endereco=?, complemento=?, cep=?, bairro=?, cidade=?, estado=?, telefone=? WHERE cpf=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sssssssssss", $nome, $matricula, $nascimento, $endereco, $complemento, $cep, $bairro, $cidade, $estado, $telefone, $cpf);
 
-// Verifica a conexão
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
+        if ($stmt->execute()) {
+            echo "Registro de aluno atualizado com sucesso!";
+        } else {
+            echo "Erro ao atualizar registro de aluno: " . $stmt->error;
+        }
 
-// Atualiza os dados na tabela alunos
-$sql = "UPDATE alunos SET nome='$nome', matricula='$matricula', nascimento='$nascimento', endereco='$endereco' WHERE id=$id";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Registro de aluno atualizado com sucesso!";
+        // Fecha a conexão
+        $conn->close();
+    } else {
+        // Se algum campo estiver faltando, exibe uma mensagem de erro
+        echo "Por favor, preencha todos os campos.";
+    }
 } else {
-    echo "Erro: " . $sql . "<br>" . $conn->error;
+    // Se não for enviado via POST, redireciona para a página de erro
+    header("Location: erro.php");
 }
-
-// Fecha a conexão
-$conn->close();
 ?>

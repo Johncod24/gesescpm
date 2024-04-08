@@ -1,38 +1,41 @@
 <?php
 session_start();
 
-// Conexão com o banco de dados (substitua pelas suas credenciais)
-$servername = "localhost";
-$username = "seu_usuario";
-$password = "sua_senha";
-$dbname = "seu_banco_de_dados";
+// Verifica se os dados foram enviados via POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verifica se todos os campos foram preenchidos
+    if (isset($_POST['username']) && isset($_POST['password'])) {
+        // Obtém os dados do formulário
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-// Obtém os dados do formulário
-$username = $_POST['username'];
-$password = $_POST['password'];
+ include("connect.php");
 
-// Cria a conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
+        // Consulta o banco de dados para o usuário
+        $sql = "SELECT * FROM usuarios WHERE username=? AND password=?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ss", $username, $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-// Verifica a conexão
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
+        // Verifica se o usuário existe e tem permissão
+        if ($result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['role'] = $row['role'];
+            echo "Login bem-sucedido!";
+        } else {
+            echo "Usuário ou senha inválidos.";
+        }
 
-// Consulta o banco de dados para o usuário
-$sql = "SELECT * FROM usuarios WHERE username='$username' AND password='$password'";
-$result = $conn->query($sql);
-
-// Verifica se o usuário existe e tem permissão
-if ($result->num_rows == 1) {
-    $row = $result->fetch_assoc();
-    $_SESSION['username'] = $row['username'];
-    $_SESSION['role'] = $row['role'];
-    echo "Login bem-sucedido!";
+        // Fecha a conexão
+        $conn->close();
+    } else {
+        // Se algum campo estiver faltando, exibe uma mensagem de erro
+        echo "Por favor, preencha todos os campos.";
+    }
 } else {
-    echo "Usuário ou senha inválidos.";
+    // Se não for enviado via POST, redireciona para a página de erro
+    header("Location: erro.php");
 }
-
-// Fecha a conexão
-$conn->close();
 ?>
