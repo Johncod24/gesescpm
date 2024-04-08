@@ -1,14 +1,5 @@
 <?php
-$servername = "testes";
-$username = "johntest";
-$password = "YWAjfT3j]SNV/VyE";
-$dbname = "johntest";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+include("connect.php");
 
 $sql = "INSERT INTO Matriculas_Turmas (id_matricula, id_turma)
 VALUES ('".$_POST["id_matricula"]."', '".$_POST["id_turma"]."')";

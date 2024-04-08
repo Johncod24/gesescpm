@@ -1,30 +1,33 @@
 <?php
-// Conexão com o banco de dados (substitua pelas suas credenciais)
-$servername = "localhost";
-$username = "seu_usuario";
-$password = "sua_senha";
-$dbname = "seu_banco_de_dados";
+include("connect.php");
 
-// Obtém o ID do aluno a ser excluído
-$id = $_POST['id'];
+// Verifica se os dados foram enviados via POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verifica se o campo cpf foi preenchido
+    if (isset($_POST['cpf'])) {
+        // Obtém o CPF do formulário
+        $cpf = $_POST['cpf'];
 
-// Cria a conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
+        // Exclui o registro da tabela alunos
+        $sql = "DELETE FROM alunos WHERE cpf=?";
 
-// Verifica a conexão
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $cpf);
 
-// Exclui o registro da tabela alunos
-$sql = "DELETE FROM alunos WHERE id=$id";
+        if ($stmt->execute()) {
+            echo "Registro de aluno excluído com sucesso!";
+        } else {
+            echo "Erro ao excluir registro de aluno: " . $stmt->error;
+        }
 
-if ($conn->query($sql) === TRUE) {
-    echo "Registro de aluno excluído com sucesso!";
+        // Fecha a conexão
+        $conn->close();
+    } else {
+        // Se o campo cpf estiver faltando, exibe uma mensagem de erro
+        echo "Por favor, preencha o CPF do aluno a ser removido.";
+    }
 } else {
-    echo "Erro ao excluir registro de aluno: " . $conn->error;
+    // Se não for enviado via POST, redireciona para a página de erro
+    header("Location: erro.php");
 }
-
-// Fecha a conexão
-$conn->close();
 ?>

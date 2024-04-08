@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matrículas em Turmas - GesEsECPM</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Matrículas em Turmas</h1>
+    <form action="../backend/matriculas_turmas.php" method="post">
+        <label for="id_matricula">ID da Matrícula:</label><br>
+        <input type="text" id="id_matricula" name="id_matricula"><br>
+        <label for="id_turma">ID da Turma:</label><br>
+        <input type="text" id="id_turma" name="id_turma"><br>
+        <input type="submit" value="Matricular">
+    </form>
+
+    <h2>Atualizar Matrícula em Turma</h2>
+    <form action="../backend/update_matricula_turma.php" method="post">
+        <label for="id_matricula_turma_update">ID da Matrícula em Turma:</label><br>
+        <input type="text" id="id_matricula_turma_update" name="id_matricula_turma_update"><br>
+        <label for="novo_id_matricula">Novo ID da Matrícula:</label><br>
+        <input type="text" id="novo_id_matricula" name="novo_id_matricula"><br>
+        <label for="novo_id_turma">Novo ID da Turma:</label><br>
+        <input type="text" id="novo_id_turma" name="novo_id_turma"><br>
+        <input type="submit" value="Atualizar">
+    </form>
+
+    <h2>Excluir Matrícula em Turma</h2>
+    <form action="../backend/delete_matricula_turma.php" method="post">
+        <label for="id_matricula_turma_delete">ID da Matrícula em Turma:</label><br>
+        <input type="text" id="id_matricula_turma_delete" name="id_matricula_turma_delete"><br>
+        <input type="submit" value="Excluir">
+    </form>
+</body>
+</html>

@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Consulta de Alunos Matriculados em uma Turma - GesEsECPM</title>
+    <title>Consulta de Alunos Matriculados em uma Turma e Cursos - GesEsECPM</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="scripts.js"></script>
 </head>
 <body>
-    <h1>Consulta de Alunos Matriculados em uma Turma</h1>
-    <form>
+    <h1 class="purple">Consulta de Alunos Matriculados em uma Turma</h1>
+    <form action="alunos_turma.php" method="post">
+        <label for="cpf_turma">CPF do Aluno:</label><br>
+        <input type="text" id="cpf_turma" name="cpf_turma" required><br>
         <label for="id_turma">ID da Turma:</label><br>
-        <input type="text" id="id_turma" name="id_turma"><br>
-        <button type="button" onclick="consultarAlunosTurma()">Consultar</button>
+        <input type="text" id="id_turma" name="id_turma" required><br>
+        <button type="submit">Consultar</button>
     </form>
+
     <div id="alunos_turma_resultado"></div>
+
+    <h1 class="purple">Consulta de Alunos Matriculados em Cursos</h1>
+    <form action="alunos_cursos.php" method="post">
+        <label for="cpf_curso">CPF do Aluno:</label><br>
+        <input type="text" id="cpf_curso" name="cpf_curso" required><br>
+        <label for="id_curso">ID do Curso:</label><br>
+        <input type="text" id="id_curso" name="id_curso" required><br>
+        <button type="submit">Consultar</button>
+    </form>
+
+    <div id="alunos_cursos_resultado"></div>
 </body>
 </html>

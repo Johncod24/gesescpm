@@ -28,6 +28,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="time
 input[type="submit"] {
     margin-top: 20px;
 }
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -44,4 +45,61 @@ th {
 
 tr:hover {
     background-color: #f5f5f5;
+}
+
+/* Cor principal - Purple */
+.purple {
+    color: #7885FF;
+}
+
+/* Cor de fundo - Light Purple */
+.light-purple {
+    background-color: #B7C8E9;
+}
+
+/* Cor de destaque - Orange */
+.orange {
+    color: #FFA500;
+}
+
+/* Cor de fundo de destaque - Light Orange */
+.light-orange {
+    background-color: #FFE4B5;
+}
+
+/* Cor de destaque secundária - Green */
+.green {
+    color: #008000;
+}
+
+/* Cor de fundo de destaque secundária - Light Green */
+.light-green {
+    background-color: #90EE90;
+}
+
+/* Estilo para o formulário de login */
+.login-form {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Estilo para os campos do formulário */
+.login-form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilo para o botão de login */
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
