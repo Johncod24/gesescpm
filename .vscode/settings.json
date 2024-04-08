@@ -1,5 +1,8 @@
 {
     "[php]": {
         "editor.linkedEditing": true,
-    }
+    },
+    "cSpell.words": [
+        "requerida"
+    ]
 }
