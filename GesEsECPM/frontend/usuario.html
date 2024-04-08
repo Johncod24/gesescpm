@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Usuários - GesEsECPM</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Usuários</h1>
+    <form action="../backend/usuarios.php" method="post">
+        <label for="id">ID do Usuário:</label><br>
+        <input type="text" id="id" name="id"><br>
+        <input type="submit" value="Consultar">
+    </form>
+
+    <h2>Atualizar Usuário</h2>
+    <form action="../backend/update_usuario.php" method="post">
+        <label for="id_update">ID do Usuário:</label><br>
+        <input type="text" id="id_update" name="id_update"><br>
+        <label for="novo_username">Novo Nome de Usuário:</label><br>
+        <input type="text" id="novo_username" name="novo_username"><br>
+        <label for="nova_senha">Nova Senha:</label><br>
+        <input type="password" id="nova_senha" name="nova_senha"><br>
+        <input type="submit" value="Atualizar">
+    </form>
+
+    <h2>Excluir Usuário</h2>
+    <form action="../backend/delete_usuario.php" method="post">
+        <label for="id_delete">ID do Usuário:</label><br>
+        <input type="text" id="id_delete" name="id_delete"><br>
+        <input type="submit" value="Excluir">
+    </form>
+</body>
+</html>
