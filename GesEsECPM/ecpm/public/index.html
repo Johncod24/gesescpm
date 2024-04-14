@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<link rel="stylesheet" type="text/css" href="../index.css">
+<script src="../index.js"></script>
+<head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,6 +12,9 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -24,10 +29,40 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>ECPM</title>
   </head>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">ola</div>
+    <body>
+      <div>
+      <h2>Login</h2>
+      <!-- Formulário de login -->
+      <form class="login-form" action="../backend/login.php" method="POST">
+          <input type="text" name="usuario" placeholder="Usuário" required>
+          <input type="password" name="senha" placeholder="Senha" required>
+          <button type="submit">Entrar</button>
+      </form>
+  </div>
+
+  <!-- Conteúdo principal da página -->
+  <div class="main-content">
+     <h1>Bem-vindo ao Sistema de Gestão</h1>
+      <ul>
+          <a href="../src/frontend/usuario.html">Usuario</a>
+          <a href="../src/frontend/registro.html">Registro</a>
+          <a href="../src/frontend/matricula.html">Matricula</a>
+          <a href="../src/frontend/matricula_turma.html">Matricula em Turma</a>
+          <a href="../src/frontend/alunos.html">Cadastro de Alunos</a>
+          <a href="../src/frontend/alunos_turma.html">Alunos em Cursos e Turmas</a>
+          <a href="../src/frontend/professor.html">Cadastro de Professores</a>
+          <a href="../src/frontend/cursos.html">Cadastro de Cursos</a>
+          <a href="../src/frontend/disciplinas.html">Cadastro de Disciplinas</a>
+          <a href="../src/frontend/disciplinas_curso.html">Disciplinas em Curso</a>
+          <a href="../src/frontend/turmas.html">Cadastro de Turmas</a>
+          <!-- Adicione links para outros arquivos HTML conforme necessário -->
+      </ul>
+  </div>
+  </body>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -43,35 +78,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-        <h2>Login</h2>
-        <!-- Formulário de login -->
-        <form class="login-form" action="../backend/login.php" method="POST">
-            <input type="text" name="usuario" placeholder="Usuário" required>
-            <input type="password" name="senha" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
-        </form>
-    </div>
+    <link rel="stylesheet" type="text/css" href="GesEsECPM/ecpm/src/frontend/style.css">
 
-    <!-- Conteúdo principal da página -->
-    <div class="main-content">
-        <h1>Bem-vindo ao Sistema de Gestão</h1>
-        <ul>
-            <a href="/workspaces/gesescpm/GesEsECPM/frontend/usuario.html">Usuario</a>
-            <a href="/workspaces/gesescpm/GesEsECPM/frontend/registro.html">Registro</a>
-            <a href="/workspaces/gesescpm/GesEsECPM/frontend/matricula.html">Matricula</a>
-            <a href="/workspaces/gesescpm/GesEsECPM/frontend/matricula_turma.html">Matricula em Turma</a>
-            <a href="/GesEsECPM/frontend/alunos.html">Cadastro de Alunos</a>
-            <a href="/GesEsECPM/frontend/alunos_turma.html">Alunos em Cursos e Turmas</a>
-            <a href="/GesEsECPM/frontend/professor.html">Cadastro de Professores</a>
-            <a href="/GesEsECPM/frontend/cursos.html">Cadastro de Cursos</a>
-            <a href="/GesEsECPM/frontend/disciplinas.html">Cadastro de Disciplinas</a>
-            <a href="/GesEsECPM/frontend/disciplinas_curso.html">Disciplinas em Curso</a>
-            <a href="/GesEsECPM/frontend/turmas.html">Cadastro de Turmas</a>
-            <!-- Adicione links para outros arquivos HTML conforme necessário -->
-        </ul>
-    </div>
-    </body>
+</head>
 </html>
