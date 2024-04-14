@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matrícula - GesEsECPM</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+<script src="/GesEsECPM/ecpm/src/index.js"></script>
+</head>
+<body>
+    <h1>Matrícula</h1>
+    <form action="../backend/matricula.php" method="post" onsubmit="return validateMatriculaForm()">
+        <label for="id_aluno">ID do Aluno:</label><br>
+        <input type="text" id="id_aluno" name="id_aluno"><br>
+        <label for="id_curso">ID do Curso:</label><br>
+        <input type="text" id="id_curso" name="id_curso"><br>
+        <input type="submit" value="Matricular">
+    </form>
+
+    <h2>Atualizar Matrícula</h2>
+    <form action="../backend/update_matricula.php" method="post">
+        <label for="id_matricula_update">ID da Matrícula:</label><br>
+        <input type="text" id="id_matricula_update" name="id_matricula_update"><br>
+        <label for="novo_id_aluno">Novo ID do Aluno:</label><br>
+        <input type="text" id="novo_id_aluno" name="novo_id_aluno"><br>
+        <label for="novo_id_curso">Novo ID do Curso:</label><br>
+        <input type="text" id="novo_id_curso" name="novo_id_curso"><br>
+        <input type="submit" value="Atualizar">
+    </form>
+
+    <h2>Excluir Matrícula</h2>
+    <form action="../backend/delete_matricula.php" method="post">
+        <label for="id_matricula_delete">ID da Matrícula:</label><br>
+        <input type="text" id="id_matricula_delete" name="id_matricula_delete"><br>
+        <input type="submit" value="Excluir">
+    </form>
+</body>
+</html>
