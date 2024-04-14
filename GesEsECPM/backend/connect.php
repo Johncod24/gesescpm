@@ -1,10 +1,11 @@
 <?php
-$servername = "gesescpm";
+$servername = "localhost";
 $username = "root";
 $password = "YWAjfT3j]SNV/VyE";
 $dbname = "johntest";
+$port= "3308";
 // Cria uma conexão com o banco de dados
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
 
 // Verifica a conexão
 if ($conn->connect_error) {
